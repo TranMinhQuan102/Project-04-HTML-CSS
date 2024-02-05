@@ -11,6 +11,7 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+/* Common - Dùng chung cả dự án */
 h1,
 h2,
 h3,
@@ -26,4 +27,70 @@ select,
 button {
     font-size: inherit;
     font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    --height: 56px;
+    min-width: 130px;
+    height: var(--height);
+    line-height: var(--height);
+    border: 1px solid rgba(0, 9, 88, 0.7);
+    border-radius: 99px;
+
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #000958;
+}
+
+.btn {
+    opacity: 0.9; /* Không thể dùng chung đc, bởi vì sẽ đồng thời thay đổi màu viền và chữ */
+}
+
+/* ------------------------------------------------ Header ------------------------------------------------ */
+.header {
+    padding: 26px 0px;
+}
+
+.container {
+    width: 1170px;
+    max-width: calc(
+        100% - 48px
+    ); /* Khi trình duyệt co giãn thì khoảng cách 2 bên là 24px */
+    margin: 0 auto;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__list {
+    display: flex;
+}
+
+.navbar__list .navbar__link,
+.header-action__links {
+    padding: 8px 18px; /* Tăng vùng click chuột. Dùng Margin thì cần phải click vào đúng vị trí */
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #5e6085;
+}
+
+.navbar__link:hover {
+    color: 000958;
+    text-shadow: 1px 0 0 currentColor; /* Nếu dùng font-weight 600 thì sẽ bị giật */
+    cursor: pointer;
+}
+
+.header-action__btn {
+    --height: 50px;
+    min-width: 117px;
 }
