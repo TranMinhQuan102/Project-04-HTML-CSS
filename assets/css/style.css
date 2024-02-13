@@ -798,3 +798,169 @@ a {
 .staff-item:nth-child(even) .staff-item__img::after {
     background-position: 0px 16px;
 }
+
+/* ------------------------------------------------ Price ------------------------------------------------ */
+.price {
+    padding: 86px 0px;
+    background: #fff6ed;
+}
+
+.price__container {
+    width: 994px;
+}
+
+.price__heading,
+.price__desc {
+    text-align: center;
+}
+
+.price__desc {
+    width: 709px;
+    /* Mặc dù text-align là Center hoạt động (canh giữa nội dung chữ)  */
+    /* Không canh giữa thẻ P */
+    /* Để canh giữa thẻ P  thì dùng Margin-Left và Margin-Right là Auto */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.price__swift--wrap {
+    margin-top: 38px;
+    display: flex;
+    justify-content: center;
+}
+
+.price__swift--inner {
+    position: relative;
+}
+
+.price__swift--input:checked + .price__swift--label::before {
+    left: auto;
+    right: 0px;
+    width: 131px;
+}
+
+.price__swift--input:not(:checked)
+    + .price__swift--label
+    .price__swift--value:nth-child(2) {
+    /* Khi mà thẻ swift--input không được nhấn thì nhìn sang thẻ gần nhất là swift--label 
+    và nhắm đến thẻ con thứ 2 là value-2 */
+
+    color: #ff5b2e;
+}
+
+.price__swift--input:checked
+    + .price__swift--label
+    .price__swift--value:nth-child(1) {
+    /* Khi mà thẻ swift--input  được nhấn thì nhìn sang thẻ gần nhất là swift--label 
+    và nhắm đến thẻ con thứ 1 là swift- value-1 */
+    color: #ff5b2e;
+}
+
+.price__swift--label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+    width: 276px;
+    height: 56px;
+    border: 1px solid rgba(255, 91, 46, 0.6);
+    border-radius: 99px;
+
+    user-select: none; /* Khi nhấn nút thì sẽ có viền xanh (chọn phần tử) nên là không đẹp */
+    cursor: pointer;
+}
+
+.price__swift--value {
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: white;
+}
+
+.price__swift--label:before {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 100%;
+    background: #ff5b2e;
+    border-radius: inherit;
+    top: 0;
+    left: 0;
+}
+
+.price__sale {
+    position: absolute;
+    right: -112px;
+    top: -10px;
+}
+
+.price__list {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 44px;
+}
+
+.price-item {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 28px;
+}
+
+.price-item__type {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: #ff5b2e;
+}
+
+.price-item__heading {
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: #3f4065;
+}
+
+.price-item__price {
+    margin-top: 24px;
+    font-family: "sora", sans-serif;
+    font-weight: 700;
+    font-size: 3.3rem;
+    line-height: 1.03;
+    color: #000958;
+}
+
+.price-item__btn {
+    --height: 44px;
+    margin-top: 22px;
+    width: 100%;
+    border: 1px solid rgba(255, 91, 46, 0.6);
+    color: #ff5b2e;
+    background-color: transparent;
+}
+
+.price-item__list {
+    margin-top: 24px;
+}
+
+.price-item__item {
+    display: flex; /* Bởi vì các chữ tự động cách ra Nên thêm Display Flex */
+
+    margin-top: 18px;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #656689;
+}
+
+.price-item__item::before {
+    content: url(../img/Price-Check.svg);
+    margin-right: 14px;
+}
+
+.price-item__btn:hover {
+    background-color: #ff5b2e;
+    color: white;
+}
